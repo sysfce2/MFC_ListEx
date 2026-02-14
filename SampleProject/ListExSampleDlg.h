@@ -35,6 +35,7 @@ protected:
 	afx_msg void OnListHdrIconClick(NMHDR* pNMHDR, LRESULT* pResult);
 	afx_msg void OnListHdrRClick(NMHDR* pNMHDR, LRESULT* pResult);
 	afx_msg void OnListLinkClick(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnListLClick(NMHDR* pNMHDR, LRESULT* pResult);
 	afx_msg void OnListSetData(NMHDR* pNMHDR, LRESULT* pResult);
 	afx_msg void OnMeasureItem(int nIDCtl, LPMEASUREITEMSTRUCT lpMeasureItemStruct);
 	void SortVecData();

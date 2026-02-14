@@ -1,11 +1,10 @@
 #include "stdafx.h"
-#include "ListExSample.h"
+#include "Resource.h"
 #include "ListExSampleDlg.h"
 #include "afxdialogex.h"
 #include "framework.h"
 #include <algorithm>
 #include <ctime>
-#include <format>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -20,6 +19,7 @@ BEGIN_MESSAGE_MAP(CListExSampleDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_NOTIFY(LVN_GETDISPINFOW, IDC_LISTEX, &CListExSampleDlg::OnListGetDispInfo)
+	ON_NOTIFY(NM_CLICK, IDC_LISTEX, &CListExSampleDlg::OnListLClick)
 	ON_NOTIFY(LISTEX_MSG_EDITBEGIN, IDC_LISTEX, &CListExSampleDlg::OnListEditBegin)
 	ON_NOTIFY(LISTEX_MSG_GETCOLOR, IDC_LISTEX, &CListExSampleDlg::OnListGetColor)
 	ON_NOTIFY(LISTEX_MSG_GETICON, IDC_LISTEX, &CListExSampleDlg::OnListGetIcon)
@@ -323,6 +323,11 @@ void CListExSampleDlg::OnListLinkClick(NMHDR* pNMHDR, LRESULT* /*pResult*/)
 {
 	const auto pLLI = reinterpret_cast<PLISTEXLINKINFO>(pNMHDR);
 	MessageBoxW(pLLI->pwszText);
+}
+
+void CListExSampleDlg::OnListLClick(NMHDR* /*pNMHDR*/, LRESULT* /*pResult*/)
+{
+	//const auto p = reinterpret_cast<NMITEMACTIVATE*>(pNMHDR);
 }
 
 void CListExSampleDlg::OnListSetData(NMHDR* pNMHDR, LRESULT* /*pResult*/)
