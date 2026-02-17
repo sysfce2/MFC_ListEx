@@ -60,8 +60,8 @@ BOOL CListExSampleDlg::OnInitDialog()
 	lcs.dwTTStyleLink = TTS_NOANIMATE;
 	lcs.dwTTShowTime = 2000; //Tooltip show up time.
 //	lcs.dwTTDelayTime = 1000;
-	lcs.dwSizeFontList = 10;
-	lcs.dwSizeFontHdr = 10;
+	lcs.flSizeFontList = 10;
+	lcs.flSizeFontHdr = 10;
 	lcs.fLinks = true;
 	//lcs.dwGridWidth = 0;
 	//lcs.fEditSingleClick = true;
